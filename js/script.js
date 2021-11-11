@@ -60,6 +60,44 @@ tabsContainer.addEventListener("click", (e) =>{
     }
 });
 
+
+
+/* ---------------------Certificates Item details Popup------------------------ */
+
+document.addEventListener("click", (e) =>{
+    if(e.target.classList.contains("view-certificate-btn")){
+        toggleCertificatePopup();
+        document.querySelector(".certificate-popup").scrollTo(0,0);
+        certificateItemDetails(e.target.parentElement);
+    }
+})
+function toggleCertificatePopup(){
+    document.querySelector(".certificate-popup").classList.toggle("open");
+    document.body.classList.toggle("hide-scrolling");
+    document.querySelector(".main").classList.toggle("fade-out");
+}
+document.querySelector(".pc-close").addEventListener("click", toggleCertificatePopup);
+
+// hide popup when clicking outside of it
+document.addEventListener("click", (e) =>{
+    if(e.target.classList.contains(".pc-inner")){
+        toggleCertificatePopup();
+    }
+});
+
+function certificateItemDetails(certificateItem){
+    document.querySelector(".pc-thumbnail img").src = 
+    certificateItem.querySelector(".certificate-item-thumbnail img").src;
+
+    document.querySelector(".pc-header h3").innerHTML =
+    certificateItem.querySelector(".certificate-item-title").innerHTML;
+
+    document.querySelector(".pc-body").innerHTML = 
+    certificateItem.querySelector(".certificate-item-details").innerHTML;
+}
+
+
+
 /* ---------------------Portfolio Item details Popup------------------------ */
 
 document.addEventListener("click", (e) =>{
