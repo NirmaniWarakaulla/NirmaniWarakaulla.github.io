@@ -767,6 +767,117 @@ Certificate Section
 
 
 
+/* ---------------------
+extracurricular Section
+------------------------*/
+.extracurricular-section{
+    padding-bottom: 50px;
+}
+.extracurricular-item{
+    width: calc((100% / 3) - 30px);
+    margin:0 15px 30px;
+}
+.extracurricular-item-thumbnail{
+    padding: 10px;
+    background-color: var(--white-alpha-25);
+    border:1px solid var(--white-alpha-40);
+    border-radius: 10px;
+}
+.extracurricular-item-thumbnail img{
+    width: 100%;
+    border-radius: 10px;
+}
+.extracurricular-item h3{
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 20px 0;
+}
+.extracurricular-item-details{
+    display: none;
+}
+
+/* extracurricular Popup */
+
+.extracurricular-popup{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    visibility: hidden;  
+}
+.extracurricular-popup.open{
+    visibility: visible;
+    overflow-y: auto; 
+}
+.pe-inner{
+    min-height: 100vh;
+    padding: 40px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pe-content{
+    background-color: var(--white-alpha-25);
+    padding: 30px;
+    border-radius: 30px;
+    max-width: 900px;
+    width: 100%;
+    border: 1px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter-blur);
+    opacity: 0;
+    transform: scale(0.9);
+}
+.extracurricular-popup.open .pe-content{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+.extracurricular-popup.open .pe-content{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+.pe-header{
+    position: relative;
+}
+.pe-header .btn{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -40px;
+    top: -40px;
+}
+.pe-thumbnail img{
+    border-radius: 10px;
+}
+.pe-header h3{
+    font-size: 25px;
+    text-transform: capitalize;
+    margin: 20px 0 15px;
+}
+.pe-body .description{
+    margin-bottom: 20px;
+}
+.pe-body .general-info li{
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.pe-body .general-info li span{
+    font-weight: 300;
+}
+.pe-body .general-info li a{
+    text-transform: lowercase;
+    color: var(--main-color);
+}
+
+
 
 /* ---------------------
 Portfolio Section
