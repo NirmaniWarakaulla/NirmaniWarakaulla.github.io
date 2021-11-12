@@ -98,6 +98,42 @@ function certificateItemDetails(certificateItem){
 
 
 
+/* ---------------------extracurricular Item details Popup------------------------ */
+
+document.addEventListener("click", (e) =>{
+    if(e.target.classList.contains("view-extracurricular-btn")){
+        toggleExtracurricularPopup();
+        document.querySelector(".extracurricular-popup").scrollTo(0,0);
+        extracurricularItemDetails(e.target.parentElement);
+    }
+})
+function toggleExtracurricularPopup(){
+    document.querySelector(".extracurricular-popup").classList.toggle("open");
+    document.body.classList.toggle("hide-scrolling");
+    document.querySelector(".main").classList.toggle("fade-out");
+}
+document.querySelector(".pe-close").addEventListener("click", toggleExtracurricularPopup);
+
+// hide popup when clicking outside of it
+document.addEventListener("click", (e) =>{
+    if(e.target.classList.contains(".pe-inner")){
+        toggleExtracurricularPopup();
+    }
+});
+
+function extracurricularItemDetails(extracurricularItem){
+    document.querySelector(".pe-thumbnail img").src = 
+    extracurricularItem.querySelector(".extracurricular-item-thumbnail img").src;
+
+    document.querySelector(".pe-header h3").innerHTML =
+    extracurricularItem.querySelector(".extracurricular-item-title").innerHTML;
+
+    document.querySelector(".pe-body").innerHTML = 
+    extracurricularItem.querySelector(".extracurricular-item-details").innerHTML;
+}
+
+
+
 /* ---------------------Portfolio Item details Popup------------------------ */
 
 document.addEventListener("click", (e) =>{
